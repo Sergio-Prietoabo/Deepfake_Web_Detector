@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/processing.css')}}">
+  <meta charset="UTF-8">
+  <title>Processing</title>
+</head>
+<body>
+<h1 style="color: white">Analyzing video</h1>
+
+<div class="bar-container">
+  <h2>PROCESSING VIDEO... PLEASE WAIT</h2>
+  <br>
+  <div class="bar">
+    <div class="progress-value"></div>
+  </div>
+</div>
+
+<pre id="output"></pre>
+
+<script>
+  setInterval(function(){
+    let bar = document.getElementsByClassName("progress-value")[0];
+    let fondo = document.getElementsByClassName("bar")[0]
+
+    bar.style.width = bar.clientWidth+1+"px";
+    if(bar.clientWidth >= fondo.clientWidth){
+      bar.style.width = 1+"px";
+    }
+  }, 30);
+
+</script>
+<script>
+    window.location.href = "/results";
+</script>
+
+</body>
+</html>

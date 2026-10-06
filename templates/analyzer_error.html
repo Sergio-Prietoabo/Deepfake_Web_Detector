@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <style>
+    body {
+      text-align: center;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <title>Video Analyzer</title>
+</head>
+<body style="background-image: url('{{ url_for('static', filename='web_background.png') }}'); background-size: auto auto; background-position: center; background-repeat: no-repeat; background-margin: no-margin;">
+
+<h1 style="color: white">Analyze video</h1>
+
+<form method='POST' action="/processing">
+  <input type="text" name="video_url" placeholder="URL del video" size="50">
+  <input type="submit" value="Analyze">
+</form>
+
+<p><span style="color: red;">INVALID URL</span></p>
+
+<pre id="output"></pre>
+<!--
+<script>
+async function analyze() {
+  const url = document.getElementById("video_url").value;
+
+  const res = await fetch("http://localhost:5000/processing", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ video_url })
+  });
+
+  const data = await res.json();
+  document.getElementById("output").textContent =
+    JSON.stringify(data, null, 2);
+}
+</script>-->
+
+</body>
+</html>

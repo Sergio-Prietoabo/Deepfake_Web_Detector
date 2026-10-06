@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/analyzer.css')}}">
+  <meta charset="UTF-8">
+  <title>Video Analyzer</title>
+</head>
+<body>
+<h1 style="color: white">Analyze video</h1>
+
+<form method='POST' action="/processing">
+  <input type="text" name="video_url" placeholder="URL del video" size="50">
+  <input type="submit" value="Analyze">
+</form>
+
+
+<pre id="output"></pre>
+<!--
+<script>
+async function analyze() {
+  const url = document.getElementById("video_url").value;
+
+  const res = await fetch("http://localhost:5000/processing", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ video_url })
+  });
+
+  const data = await res.json();
+  document.getElementById("output").textContent =
+    JSON.stringify(data, null, 2);
+}
+</script>-->
+</body>
+</html>

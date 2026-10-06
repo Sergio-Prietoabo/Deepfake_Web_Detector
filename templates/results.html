@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <style>
+    body {
+      text-align: center;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="Model-info" content="This model has acc=67% & recall=67%, it measures the probability of having at least one part made by IA, so it classifies as IA very often">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Model Results</title>
+</head>
+<body>
+    <h1>Model Results</h2>
+    {%if results and video_doc %}
+    <div style="background-color: black; 
+            padding: 20px; 
+            border-radius: 15px; 
+            text-align: left;
+            color: white;">
+        <h2>Video:  {{video_doc.title}}                By: {{video_doc.author}}</h1>
+        <h2>Classified As:  {{results.label}}</h2>
+        <h2>Confidence:  {{results.confidence}}%</h2>
+        <h2>Collision: {{results.ia_agreement}}</h2>
+    </div>
+    {% endif %}
+    <br>
+    <br>
+    <br>
+    <form action="/analyzer" method="GET">
+      <input type="submit" value="Back to Main Page">
+    </form>
+</body>
+
+<!-- 
+    
+    video_doc  {
+            "video_id": yt.video_id,
+            "title": yt.title,
+            "keywords": yt.keywords,
+            "views": yt.views,
+            "length": yt.length,
+            "author": yt.author,
+            "file_path": file_path,
+            "true_label": true_label
+    }
+    results {
+        "label": "IA" / "REAL",
+        "confidence": confianza # [0-100]
+        "ia_agreement": boolean # los 3 modelos estan de acuerdo en que un mismo fragmento tiene IA
+    }
+        
+    -->

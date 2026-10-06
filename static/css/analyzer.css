@@ -1,0 +1,7 @@
+body{
+    text-align: center;
+    background-image: url("/static/web_background.png");
+    background-size: auto auto; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}

@@ -1,0 +1,60 @@
+body{
+    text-align: center;
+    background-image: url("/static/web_background.png");
+    background-size: auto auto; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+.video-player {
+    align-items: center;
+    width: 250;
+}
+
+.bar-container {
+    color: white;
+    position: fixed;
+    top: 50%;             /* mitad vertical */
+    left: 50%;            /* mitad horizontal */
+    transform: translate(-50%, -50%); /* centra realmente el elemento */
+    width: 100%;
+    z-index: 1000;
+}
+
+.bar {
+    margin: 0 auto; 
+    height: 20px; 
+    width: 30%; 
+    background: gray; 
+    border-radius: 50px; 
+    overflow: hidden;
+}
+
+.progress-value {
+    display: block; 
+    width: 0%; 
+    height: 100%; 
+    border-radius: 50px; 
+    background-image: linear-gradient(
+        -45deg, 
+        yellow 25%, 
+        green 25%, 
+        green 50%, 
+        yellow 50%, 
+        yellow 75%, 
+        green 75%, 
+        green); 
+    background-size: 50px 50px; 
+    animation: load 1s infinite linear;
+}
+
+@keyframes load {
+    0% {
+        background-position: 
+        0 0;
+    }
+    100% {
+        background-position: 
+        50px 50px;
+    }
+}

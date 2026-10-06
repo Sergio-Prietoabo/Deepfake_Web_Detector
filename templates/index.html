@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <style>
+    body {
+      text-align: center;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Analyzer</title>
+</head>
+<body style="background-image: url('{{ url_for('static', filename='web_background.png') }}'); background-size: auto auto; background-position: center; background-repeat: no-repeat; background-margin: no-margin;">
+
+<img src="/static/deepfake_logo.png" width="400" height="400">
+<br>
+<a href="{{ url_for('analyzer') }}" title="LETS ROCK BABY!!">
+  <img src="/static/red-start.png">
+</a> 
+<h3 style="color: white">By Sergio Prieto Abollado with:</h3>
+<a href="https://huggingface.co/Naman712/Deep-fake-detection" target="_blank" title="Modelo de huggingface de Naman712">
+  <h4 style="color: white">Naman712/Deep-fake-detection</h4>
+</a>
+<a href="https://huggingface.co/Hemgg/deepfake_model_Video-MAE-1" target="_blank" title="Modelo de huggingface de Hemgg">
+  <h4 style="color: white">Hemgg/deepfake_model_Video-MAE-1</h4>
+</a>
+<a title="La cuenta de jayalakshmipouri ha desaparecido de huggingface">
+  <h4 style="color: white">Jayalakshmikopuri/cvit_deepfake_video_detection_V1</h4>
+</a>
+
+
+</body>
+</html>
